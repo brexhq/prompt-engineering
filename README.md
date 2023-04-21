@@ -1,4 +1,4 @@
-#  Prompt Engineering Crash Course
+# [Brex's](https://brex.com) Prompt Engineering Crash Course
 
 This crash course was created by Brex for internal purposes. It's based on
 lessons learned from researching and creating Large Language Model prompts for
