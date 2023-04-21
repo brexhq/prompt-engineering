@@ -1,10 +1,18 @@
-# Prompt Engineering Crash Course
+#  Prompt Engineering Crash Course
 
-*April 2023*
+This crash course was created by Brex for internal purposes. It's based on
+lessons learned from researching and creating Large Language Model prompts for
+production use cases. It covers the history around LLMs as well as
+strategies, guidelines, and safety recommendations for working with and
+building programmatic systems on top of large language models (LLMs), like
+[OpenAI's GPT-4](https://openai.com/research/gpt-4).
 
-This document covers foundational history, strategies, guidelines, and safety recommendations for working with and building programmatic systems on top of large language models (LLMs), such as [OpenAI's GPT-4](https://openai.com/research/gpt-4).
+The examples in this document were generated with a non-deterministic language
+model and the same examples may give you different results.
 
-This is a living document. The state-of-the-art best practices and strategies around LLMs are evolving every day. Discussions and suggestions for improvements are encouraged.
+This is a living document. The state-of-the-art best practices and strategies
+around LLMs are evolving rapidly every day. Discussion and suggestions for
+improvements are encouraged.
 
 ## What is a Large Language Model (LLM)?
 
@@ -18,7 +26,7 @@ As language models become more accurate at predicting sequences, [many surprisin
 [^2]: There are many different pruning and sampling strategies to alter the behavior and performance of the sequences.
 
 ### A Brief, Incomplete, and Somewhat Incorrect History of Language Models
- 
+
 > :pushpin: Skip [to here](#what-is-a-prompt) if you actually just want the prompt crash course. This section is for the curious minded, though may also help you understand the reasoning behind the advice that follows.
 
 #### Pre-2000’s
@@ -66,7 +74,7 @@ A prompt, sometimes referred to as context, is the text that you give to a model
 <p align="center">
   <img width="400" src="https://user-images.githubusercontent.com/89960/231946874-be91d3de-d773-4a6c-a4ea-21043bd5fc13.png" title="The GPT-4 model interpreting Python code.">
 </p>
- 
+
 And it *almost* interprets the Python perfectly!
 
 Frequently, prompts will be an instruction or a question, like:
