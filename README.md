@@ -28,7 +28,7 @@ improvements are encouraged.
   - [Token Limits](#token-limits)
   - [Prompt Hacking](#prompt-hacking)
     - [Jailbreaks](#jailbreaks)
-  - [Leaks](#leaks)
+    - [Leaks](#leaks)
 - [Why do we need prompt engineering?](#why-do-we-need-prompt-engineering)
   - [Give a Bot a Fish](#give-a-bot-a-fish)
     - [Semantic Search](#semantic-search)
@@ -124,8 +124,8 @@ dependencies. If you asked it to complete the sentence, “In France, we
 traveled around, ate many pastries, drank lots of wine, ... lots more text ...
 , but never learned how to speak _______”, the model might struggle with
 predicting “French”. They also process input one token at a time, so are
-inherently sequential, slow to train, and the Nth token only knows about the N
-- 1 tokens prior to it.
+inherently sequential, slow to train, and the `Nth` token only knows about the
+`N - 1` tokens prior to it.
 
 #### Late-2010’s
 
@@ -214,7 +214,7 @@ amusingly, a language model will happily attempt to guess what source code
 will do:
 
 <p align="center">
-  <img width="500" src="https://user-images.githubusercontent.com/89960/231946874-be91d3de-d773-4a6c-a4ea-21043bd5fc13.png" title="The GPT-4 model interpreting Python code.">
+  <img width="450" src="https://user-images.githubusercontent.com/89960/231946874-be91d3de-d773-4a6c-a4ea-21043bd5fc13.png" title="The GPT-4 model interpreting Python code.">
 </p>
 
 And it *almost* interprets the Python perfectly!
@@ -402,7 +402,7 @@ There are [a number of defensive measures](https://learnprompting.org/docs/promp
 
 Despite OpenAI investing a lot into jailbreaks, there are [very clever work arounds](https://twitter.com/alexalbert__/status/1636488551817965568) being [shared every day](https://twitter.com/zswitten/status/1598088267789787136).
 
-### Leaks
+#### Leaks
 
 If you missed the previous warnings in this doc, **you should always assume that any data exposed to the language model will eventually be seen by the user**.
 
