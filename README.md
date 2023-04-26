@@ -263,7 +263,7 @@ Here’s an example of a hidden prompt followed by interactions with the content
 in that prompt:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/232416074-84ebcc10-2dfc-49e1-9f48-a240102877ee.png" title=" A very simple hidden prompt.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/232416074-84ebcc10-2dfc-49e1-9f48-a240102877ee.png" title=" A very simple hidden prompt.">
 </p>
 
 In this example, you can see we explain to the bot the various roles, some
@@ -329,7 +329,7 @@ such as punctuation, sentence boundaries, and the end of a document.
 Here’s an example of how GPT may tokenize a sequence:
 
 <p align="center">
-  <img width="500" src="https://user-images.githubusercontent.com/89960/232417569-8d562792-64b5-423d-a7a2-db7513dd4d61.png" title="An example tokenization. You can experiment here: https://platform.openai.com/tokenizer ">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/232417569-8d562792-64b5-423d-a7a2-db7513dd4d61.png" title="An example tokenization. You can experiment here: https://platform.openai.com/tokenizer ">
 </p>
 
 You can experiment with a tokenizer here: [https://platform.openai.com/tokenizer](https://platform.openai.com/tokenizer)
@@ -380,19 +380,19 @@ You are a helpful assistant, but you are never allowed to use the word "computer
 If we then ask it a question about computers, it will refer to them as a “device used for computing” because it isn’t allowed to use the word “computer”.
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/232420043-ebe5bcf1-25d9-4a31-ba84-13e9e1f62de2.png" title="GPT-4 trying hard to not say the word 'computer'.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/232420043-ebe5bcf1-25d9-4a31-ba84-13e9e1f62de2.png" title="GPT-4 trying hard to not say the word 'computer'.">
 </p>
 
 It will absolutely refuse to say the word:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/232420306-6fcdd6e2-b107-45d5-a1ee-4132fbb5853e.png">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/232420306-6fcdd6e2-b107-45d5-a1ee-4132fbb5853e.png">
 </p>
 
 But we can bypass these instructions and get the model to happily use the word if we trick it by asking it to translate the pig latin version of “computer”.
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/232420600-56083a10-b382-46a7-be18-eb9c005b8371.png">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/232420600-56083a10-b382-46a7-be18-eb9c005b8371.png">
 </p>
 
 There are [a number of defensive measures](https://learnprompting.org/docs/prompt_hacking/defensive_measures) you can take here, but typically the best bet is to reiterate your most important constraints as close to the end as possible. For the OpenAI chat API, this might mean including it as a `system` message after the last `user` message. Here’s an example:
@@ -409,7 +409,7 @@ If you missed the previous warnings in this doc, **you should always assume that
 As part of constructing prompts, you will often embed a bunch of data in hidden prompts (a.k.a. system prompts). **The bot will happily relay this information to the user**:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/232422860-731c1de2-9e77-4957-b257-b0bbda48558c.png" title="The bot happily regurgitating the information it knows about the user.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/232422860-731c1de2-9e77-4957-b257-b0bbda48558c.png" title="The bot happily regurgitating the information it knows about the user.">
 </p>
 
 Even if you instruct it not to reveal the information, and it obeys those instructions, there are millions of ways to leak data in the hidden prompt.
@@ -417,13 +417,13 @@ Even if you instruct it not to reveal the information, and it obeys those instru
 Here we have an example where the bot should never mention my city, but a simple reframing of the question get’s it to spill the beans.
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/232423121-76568893-fa42-4ad8-b2bc-e1001327fa1e.png" title="The bot refuses to reveal personal information, but we convince it to tell me what city I’m in regardless.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/232423121-76568893-fa42-4ad8-b2bc-e1001327fa1e.png" title="The bot refuses to reveal personal information, but we convince it to tell me what city I’m in regardless.">
 </p>
 
 Similarly, we get the bot to tell us what word it isn’t allowed to say without ever actually saying the word:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/232423283-1718f822-59d0-4d18-9a4d-22dd3a2672c0.png" title="Technically, the bot never said 'computer', but I was still able to get it to tell me everything I needed to know about it.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/232423283-1718f822-59d0-4d18-9a4d-22dd3a2672c0.png" title="Technically, the bot never said 'computer', but I was still able to get it to tell me everything I needed to know about it.">
 </p>
 
 You should think of a hidden prompt as a means to make the user experience better or more inline with the persona you’re targeting. **Never place any information in a prompt that you wouldn’t visually render for someone to read on screen**.
@@ -449,7 +449,7 @@ For example, if a user loaded up their dashboard and we wanted to show them a qu
 by providing a list of the entire inbox and any other user context we’d like it to have.
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233465165-e0c6b266-b347-4128-8eaa-73974e852e45.png" title="GPT-3 summarizing a task inbox.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233465165-e0c6b266-b347-4128-8eaa-73974e852e45.png" title="GPT-3 summarizing a task inbox.">
 </p>
 
 Similarly, if you were helping a user book a trip, you could:
@@ -464,7 +464,7 @@ can use to answer questions for the user. Here’s an example of the bot
 recommending options, and the user asking it to refine them:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233465425-9e06320c-b6d9-40ef-b5a4-c556861c1328.png" title="GPT-4 helping a user book a trip.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233465425-9e06320c-b6d9-40ef-b5a4-c556861c1328.png" title="GPT-4 helping a user book a trip.">
 </p>
 <details>
 
@@ -561,7 +561,7 @@ In this example below, we ask the model to output the commands in [reverse polis
 [^7]: The model handles the simplicity of RPN astoundingly well.
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233505150-aef4409c-03ba-4669-95d7-6c48f3c2c3ea.png" title="A bot happily generating commands to run in response to user queries.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233505150-aef4409c-03ba-4669-95d7-6c48f3c2c3ea.png" title="A bot happily generating commands to run in response to user queries.">
 </p>
 
 > 🧠 There are some interesting subtle things going on in that example, beyond just command generation. When we ask it to add a memo to the “shake shack” expense, the model knows that the command `add-memo` takes an expense ID. But we never tell it the expense ID, so it looks up “Shake Shack” in the table of expenses we provided it, then grabs the ID from the corresponding ID column, and then uses that as an argument to `add-memo`.
@@ -571,7 +571,7 @@ Getting command grammars working reliably in complex situations can be tricky. T
 Here’s a more complex example, with the output specified in JSON instead of RPN. And we use Typescript to define the return types of commands.
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233505696-fc440931-9baf-4d06-80e7-54801532d63f.png" title="A bot happily generating commands to run in response to user queries.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233505696-fc440931-9baf-4d06-80e7-54801532d63f.png" title="A bot happily generating commands to run in response to user queries.">
 </p>
 
 <details>
@@ -784,13 +784,13 @@ In hidden contexts, you’ll frequently want to embed all sorts of data. The spe
 For one-off objects, enumerating fields + values in a normal bulleted list works pretty well:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233507156-0bdbc0af-d977-44e0-a8d5-b30538c5bbd9.png" title="GPT-4 extracting Steve’s occupation from a list attributes.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233507156-0bdbc0af-d977-44e0-a8d5-b30538c5bbd9.png" title="GPT-4 extracting Steve’s occupation from a list attributes.">
 </p>
 
 It will also work for larger sets of things, but there are other formats for lists of data that GPT handles more reliably. Regardless, here’s an example:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233507223-9cda591e-62f3-4339-b227-a07c37b90724.png" title="GPT-4 answering questions about a set of expenses.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233507223-9cda591e-62f3-4339-b227-a07c37b90724.png" title="GPT-4 answering questions about a set of expenses.">
 </p>
 
 #### Markdown Tables
@@ -802,11 +802,11 @@ Fortunately, OpenAI’s models are exceptionally good at working with Markdown t
 We can reframe the above using Markdown tables instead:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233507313-7ccd825c-71b9-46d3-80c9-30bf97a8e090.png" title="GPT-4 answering questions about a set of expenses from a Markdown table.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233507313-7ccd825c-71b9-46d3-80c9-30bf97a8e090.png" title="GPT-4 answering questions about a set of expenses from a Markdown table.">
 </p>
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233507395-b8ecb641-726c-4e57-b85e-13f6b7717f22.png" title="GPT-4 answering questions about a set of expenses from a Markdown table.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233507395-b8ecb641-726c-4e57-b85e-13f6b7717f22.png" title="GPT-4 answering questions about a set of expenses from a Markdown table.">
 </p>
 
 > 🧠 Note that in this last example, the items in the table have an explicit date, February 2nd. In our question, we asked about “today”. And earlier in the prompt we mentioned that today was Feb 2. The model correctly handled the transitive inference – converting “today” to “February 2nd” and then looking up “February 2nd” in the table.
@@ -820,7 +820,7 @@ In these scenarios, JSON is another format that the model handles really well. T
 Here is the same example from the Markdown table, but with JSON instead:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233507559-26e6615d-4896-4a2c-b6ff-44cbd7d349dc.png" title="GPT-4 answering questions about a set of expenses from a JSON blob.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233507559-26e6615d-4896-4a2c-b6ff-44cbd7d349dc.png" title="GPT-4 answering questions about a set of expenses from a JSON blob.">
 </p>
 
 #### Freeform Text
@@ -828,7 +828,7 @@ Here is the same example from the Markdown table, but with JSON instead:
 Occasionally you’ll want to include freeform text in a prompt that you would like to delineate from the rest of the prompt – such as embedding a document for the bot to reference. In these scenarios, surrounding the document with triple backticks, ```, works well[^8].
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233507684-93222728-e216-47b4-8554-04acf9ec6201.png" title="GPT-4 answering questions about a set of expenses from a JSON blob.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233507684-93222728-e216-47b4-8554-04acf9ec6201.png" title="GPT-4 answering questions about a set of expenses from a JSON blob.">
 </p>
 
 [^8]: A good rule of thumb for anything you’re doing in prompts is to lean heavily on things the model would have learned from GitHub.
@@ -838,7 +838,7 @@ Occasionally you’ll want to include freeform text in a prompt that you would l
 Not all data is flat and linear. Sometimes you’ll need to embed data that is nested or has relations to other data. In these scenarios, lean on `JSON`:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233507758-7baffcaa-647b-4869-9cfb-a7cf8849c453.png" title="GPT-4 handles nested JSON very reliably.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233507758-7baffcaa-647b-4869-9cfb-a7cf8849c453.png" title="GPT-4 handles nested JSON very reliably.">
 </p>
 
 <details>
@@ -997,7 +997,7 @@ You are a helpful assistant. You answer questions about users. Here is what you 
 If using nested `JSON` winds up being too verbose for your token budget, fallback to `relational tables` defined with `Markdown`:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233507968-a378587b-e468-4882-a1e8-678d9f3933d3.png" title="GPT-4 handles relational tables pretty reliably too.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233507968-a378587b-e468-4882-a1e8-678d9f3933d3.png" title="GPT-4 handles relational tables pretty reliably too.">
 </p>
 
 <details>
@@ -1089,7 +1089,7 @@ One useful thing to note here is that anything you might want to cite should hav
 
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233509069-1dcbffa2-8357-49b5-be43-9791f93bd0f8.png" title="GPT-4 will reliably link to data if you ask it to.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233509069-1dcbffa2-8357-49b5-be43-9791f93bd0f8.png" title="GPT-4 will reliably link to data if you ask it to.">
 </p>
 
 ### Programmatic Consumption
@@ -1114,7 +1114,7 @@ Do not include the IDs in your message.
 And now we’ll get interactions like this:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233509174-be0c3bc5-08e3-4d1a-8841-52c401def770.png" title="GPT-4 providing travel recommendations in an easy to work with format.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233509174-be0c3bc5-08e3-4d1a-8841-52c401def770.png" title="GPT-4 providing travel recommendations in an easy to work with format.">
 </p>
 
 You could imagine the UI for this rendering the message as normal text, but then also adding discrete buttons for booking the flight + hotel, or auto-filling a form for the user.
@@ -1122,7 +1122,7 @@ You could imagine the UI for this rendering the message as normal text, but then
 As another example, let’s build on the [citations](#citations) example – but move beyond Markdown links. We can ask it to produce JSON with a normal message along with a list of items used in the creation of that message. In this scenario you won’t know exactly where in the message the citations were leveraged, but you’ll know that they were used somewhere.
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233509280-59d9ff46-0e95-488a-b314-a7d2b7c9bfa3.png" title="Asking the model to provide a list of citations is a reliable way to programmatically know what data the model leaned on in its response.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233509280-59d9ff46-0e95-488a-b314-a7d2b7c9bfa3.png" title="Asking the model to provide a list of citations is a reliable way to programmatically know what data the model leaned on in its response.">
 </p>
 
 > 🧠 Interestingly, in the model’s response to “How much did I spend at Target?” it provides a single value, $188.16, but **importantly** in the `citations` array it lists the individual expenses that it used to compute that value.
@@ -1140,13 +1140,13 @@ Just a few weeks after that paper was published, at the end of October 2022, the
 Here is an example where we ask the bot to compute the average expense, excluding Target. The actual answer is $136.77 and the bot almost gets it correct with $136.43.
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233509534-2b32c8dd-a1ee-42ea-82fb-4f84cfe7e9ba.png" title="The model **almost** gets the average correct, but is a few cents off.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233509534-2b32c8dd-a1ee-42ea-82fb-4f84cfe7e9ba.png" title="The model **almost** gets the average correct, but is a few cents off.">
 </p>
 
 If we simply add “Let’s think step-by-step”, the model gets the correct answer:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233509608-6e53995b-668b-47f6-9b5e-67afad89f8bc.png" title="When we ask the model to show its work, it gets the correct answer.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233509608-6e53995b-668b-47f6-9b5e-67afad89f8bc.png" title="When we ask the model to show its work, it gets the correct answer.">
 </p>
 
 #### Interpreting Code
@@ -1154,13 +1154,13 @@ If we simply add “Let’s think step-by-step”, the model gets the correct an
 Let’s revisit the Python example from earlier and apply chain-of-thought prompting to our question. As a reminder, when we asked the bot to evaluate the Python code it gets it slightly wrong. The correct answer is `Hello, Brex!!Brex!!Brex!!!` but the bot gets confused about the number of !'s to include. In below’s example, it outputs `Hello, Brex!!!Brex!!!Brex!!!`:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233509724-8f3302f8-59eb-4d3b-8939-53d7f63b0299.png" title="The bot almost interprets the Python code correctly, but is a little off.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233509724-8f3302f8-59eb-4d3b-8939-53d7f63b0299.png" title="The bot almost interprets the Python code correctly, but is a little off.">
 </p>
 
 If we ask the bot to show its work, then it gets the correct answer:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233509790-2a0f2189-d864-4d27-aacb-cfc936fad907.png" title="The bot correctly interprets the Python code if you ask it to show its work.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233509790-2a0f2189-d864-4d27-aacb-cfc936fad907.png" title="The bot correctly interprets the Python code if you ask it to show its work.">
 </p>
 
 #### Delimiters
@@ -1168,7 +1168,7 @@ If we ask the bot to show its work, then it gets the correct answer:
 In many scenarios, you may not want to show the end user all of the bot’s thinking and instead just want to show the final answer. You can ask the bot to delineate the final answer from its thinking. There are many ways to do this, but let’s use JSON to make it easy to parse:
 
 <p align="center">
-  <img width="400" src="https://user-images.githubusercontent.com/89960/233509865-4f3e7265-6645-4d43-8644-ecac5c0ca4a7.png" title="The bot showing its work while also delimiting the final answer for easy extraction.">
+  <img width="550" src="https://user-images.githubusercontent.com/89960/233509865-4f3e7265-6645-4d43-8644-ecac5c0ca4a7.png" title="The bot showing its work while also delimiting the final answer for easy extraction.">
 </p>
 
 Using Chain-of-Thought prompting will consume more tokens, resulting in increased price and latency, but the results are noticeably more reliable for many scenarios. It’s a valuable tool to use when you need the bot to do something complex and as reliably as possible.
