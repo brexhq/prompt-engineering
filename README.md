@@ -255,7 +255,7 @@ to the particular session – user name, location, time of day, etc...
 The model is static and frozen at a point in time, so if you want it to know
 current information, like the time or the weather, you must provide it.
 
-If you’re using [the ChatGPT
+If you’re using [the OpenAI Chat
 API](https://platform.openai.com/docs/guides/chat/introduction), they
 delineate hidden prompt content by placing it in the `system` role.
 
@@ -437,34 +437,31 @@ When writing good prompts, you have to account for the idiosyncrasies of the mod
 There’s an old adage that computers will only do what you tell them to do. **Throw that advice out the window**. Prompt engineering inverts this wisdom. It’s like programming in natural language against a non-deterministic computer that will do anything that you haven’t guided it away from doing. 
 
 There are two broad buckets that prompt engineering approaches fall into.
- 
- ### Give a Bot a Fish
- 
- The “give a bot a fish” bucket is for scenarios when you can explicitly give the bot, in the hidden context, all of the information it needs to do whatever task is requested of it.
+
+### Give a Bot a Fish
+
+The “give a bot a fish” bucket is for scenarios when you can explicitly give the bot, in the hidden context, all of the information it needs to do whatever task is requested of it.
 
 For example, if a user loaded up their dashboard and we wanted to show them a quick little friendly message about what task items they have outstanding, we could get the bot to summarize it as
 
 > You have 4 receipts/memos to upload. The most recent is from Target on March 5th, and the oldest is from Blink Fitness on January 17th. Thanks for staying on top of your expenses!
 
 by providing a list of the entire inbox and any other user context we’d like it to have.
- 
-https://user-images.githubusercontent.com/89960/233465165-e0c6b266-b347-4128-8eaa-73974e852e45.png
- 
+
 <p align="center">
   <img width="400" src="https://user-images.githubusercontent.com/89960/233465165-e0c6b266-b347-4128-8eaa-73974e852e45.png" title="GPT-3 summarizing a task inbox.">
 </p>
 
 Similarly, if you were helping a user book a trip, you could:
 
-Ask the user their dates and destination.
+- Ask the user their dates and destination.
+- Behind the scenes, search for flights and hotels.
+- Embed the flight and hotel search results in the hidden context.
+- Also embed the company’s travel policy in the hidden context.
 
-Behind the scenes, search for flights and hotels.
-
-Embed the flight and hotel search results in the hidden context.
-
-Also embed the company’s travel policy in the hidden context.
-
-And then the bot will have real-time travel information + constraints that it can use to answer questions for the user. Here’s an example of the bot recommending options, and the user asking it to refine them:
+And then the bot will have real-time travel information + constraints that it
+can use to answer questions for the user. Here’s an example of the bot
+recommending options, and the user asking it to refine them:
 
 <p align="center">
   <img width="400" src="https://user-images.githubusercontent.com/89960/233465425-9e06320c-b6d9-40ef-b5a4-c556861c1328.png" title="GPT-4 helping a user book a trip.">
@@ -472,7 +469,7 @@ And then the bot will have real-time travel information + constraints that it ca
 <details>
 
   <summary>(Full prompt)</summary>
-  
+
 ```
 Brex is a platform for managing business expenses. 
 
