@@ -23,7 +23,7 @@ improvements are encouraged.
     - [Late-2010’s](#late-2010s)
     - [2020’s](#2020s)
 - [What is a prompt?](#what-is-a-prompt)
-- [Hidden Prompts](#hidden-prompts)
+  - [Hidden Prompts](#hidden-prompts)
   - [Tokens](#tokens)
   - [Token Limits](#token-limits)
   - [Prompt Hacking](#prompt-hacking)
@@ -142,8 +142,9 @@ influential. Every output token is influenced by every input token.
 
 Transformers are highly parallelizable, efficient to train, and produce
 astounding results. A downside to transformers is that they have a fixed input
-and output size – the context window – and resource requirements increase
-quadratically with the size of this window[^3].
+and output size – the context window – and computation increases
+quadratically with the size of this window (in some cases, memory does as
+well!) [^3].
 
 Transformers are not the end of the road, but the vast majority of recent
 improvements in natural language processing have involved them. There is still
@@ -151,13 +152,14 @@ active research in non-transformer based language models though, such as
 [Amazon’s AlexaTM
 20B](https://www.amazon.science/blog/20b-parameter-alexa-model-sets-new-marks-in-few-shot-learning)
 which outperforms GPT-3 in a number of tasks and is an order of magnitude
-smaller.
+smaller in its number of parameters.
 
 [^3]: There are more recent variations to make these more memory efficient, but remains an active area of research.
 
 #### 2020’s
 
-While technically starting in 2018, the theme of the 2020’s has been GPT. One
+While technically starting in 2018, the theme of the 2020’s has been
+Generative Pre-Trained models – more famously known as GPT. One
 year after the “Attention Is All You Need” paper, OpenAI released [Improving
 Language Understanding by Generative
 Pre-Training](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf).
@@ -169,7 +171,8 @@ quickly get state-of-the-art results.
 In 2020, OpenAI followed up with their GPT-3 paper [Language Models are
 Few-Shot
 Learners](https://proceedings.neurips.cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf),
-showing that if you scale up GPT-like models by another factor of ~10x you no
+showing that if you scale up GPT-like models by another factor of ~10x, in
+terms of number of parameters and quantity of training data, you no
 longer have to fine-tune it for many tasks. The capabilities emerge naturally
 and you get state-of-the-art results via text interaction with the model.
 
@@ -205,7 +208,7 @@ Raspberry PIs.
 
 ## What is a prompt?
 
-A prompt, sometimes referred to as context, is the text that you give to a
+A prompt, sometimes referred to as context, is the text provided to a
 model before it begins generating output. It guides the model to explore a
 particular area of what it has learned so that the output is relevant to your
 goals. As an analogy, if you think of the language model as a source code
@@ -222,7 +225,7 @@ And it *almost* interprets the Python perfectly!
 Frequently, prompts will be an instruction or a question, like:
 
  <p align="center">
-  <img width="500" src="https://user-images.githubusercontent.com/89960/232413246-81db18dc-ef5b-4073-9827-77bd0317d031.png" title="The GPT-4 model interpreting Python code.">
+  <img width="500" src="https://user-images.githubusercontent.com/89960/232413246-81db18dc-ef5b-4073-9827-77bd0317d031.png">
 </p>
 
 On the other hand, if you don’t specify a prompt, the model has no anchor to
@@ -350,7 +353,14 @@ A major downside of this is that the leading language model architecture, the Tr
 
 If your context grows too large for the model, the most common tactic is the truncate the context in a sliding window fashion. If you think of a prompt as `hidden initialization prompt + messages[]`, usually the hidden prompt will remain unaltered, and the `messages[]` array will take the last N messages.
 
-Importantly, when truncating the context, you must truncate aggressively enough to **allow room for the response as well**. GPT’s token limits include both the length of the input and the length of the output. If your input to GPT-3 is 4,090 tokens, it can only generate 6 tokens in response.
+You may also see more clever tactics for prompt truncation – such as
+discarding only the user messages first, so that the bot's previous answers
+stay in the context for as long as possible, or asking an LLM to summarize the
+conversation and then replacing all of the messages with a single message
+containing that summary. There is no correct answer here and the solution will
+depend on your application.
+
+Importantly, when truncating the context, you must truncate aggressively enough to **allow room for the response as well**. OpenAI’s token limits include both the length of the input and the length of the output. If your input to GPT-3 is 4,090 tokens, it can only generate 6 tokens in response.
 
 > 🧙‍♂️ If you’d like to count the number of tokens before sending the raw text to the model, the specific tokenizer to use will depend on which model you are using. OpenAI has a library called [tiktoken](https://github.com/openai/tiktoken/blob/main/README.md) that you can use with their models – though there is an important caveat that their internal tokenizer may vary slightly in count, and they may append other metadata, so consider this an approximation.
 > 
