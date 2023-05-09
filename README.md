@@ -1,6 +1,6 @@
-# [Brex's](https://brex.com) Prompt Engineering Crash Course
+# [Brex's](https://brex.com) Prompt Engineering Guide
 
-This crash course was created by Brex for internal purposes. It's based on
+This guide was created by Brex for internal purposes. It's based on
 lessons learned from researching and creating Large Language Model (LLM)
 prompts for production use cases. It covers the history around LLMs as well as
 strategies, guidelines, and safety recommendations for working with and
@@ -77,9 +77,9 @@ emerge](https://www.assemblyai.com/blog/emergent-abilities-of-large-language-mod
 
 ### A Brief, Incomplete, and Somewhat Incorrect History of Language Models
 
-> :pushpin: Skip [to here](#what-is-a-prompt) if you actually just want the
-> prompt crash course. This section is for the curious minded, though may also
-> help you understand the reasoning behind the advice that follows.
+> :pushpin: Skip [to here](#what-is-a-prompt) if you'd like to jump past the
+> history of language models. This section is for the curious minded, though
+> may also help you understand the reasoning behind the advice that follows.
 
 #### Pre-2000’s
 
@@ -154,7 +154,7 @@ active research in non-transformer based language models though, such as
 which outperforms GPT-3 in a number of tasks and is an order of magnitude
 smaller in its number of parameters.
 
-[^3]: There are more recent variations to make these more memory efficient, but remains an active area of research.
+[^3]: There are more recent variations to make these more compute and memory efficient, but remains an active area of research.
 
 #### 2020’s
 
