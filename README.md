@@ -148,8 +148,8 @@ well!) [^3].
 
 Transformers are not the end of the road, but the vast majority of recent
 improvements in natural language processing have involved them. There is still
-active research in non-transformer based language models though, such as
-[Amazon’s AlexaTM
+abundant active research on various ways of implementing and applying them,
+such as [Amazon’s AlexaTM
 20B](https://www.amazon.science/blog/20b-parameter-alexa-model-sets-new-marks-in-few-shot-learning)
 which outperforms GPT-3 in a number of tasks and is an order of magnitude
 smaller in its number of parameters.
