@@ -405,7 +405,7 @@ But we can bypass these instructions and get the model to happily use the word i
   <img width="550" src="https://user-images.githubusercontent.com/89960/232420600-56083a10-b382-46a7-be18-eb9c005b8371.png">
 </p>
 
-There are [a number of defensive measures](https://learnprompting.org/docs/prompt_hacking/defensive_measures) you can take here, but typically the best bet is to reiterate your most important constraints as close to the end as possible. For the OpenAI chat API, this might mean including it as a `system` message after the last `user` message. Here’s an example:
+There are [a number of defensive measures](https://learnprompting.org/docs/prompt_hacking/defensive_measures/overview) you can take here, but typically the best bet is to reiterate your most important constraints as close to the end as possible. For the OpenAI chat API, this might mean including it as a `system` message after the last `user` message. Here’s an example:
 
 | ![image](https://user-images.githubusercontent.com/89960/232421097-adcaace3-0b21-4c1e-a5c8-46bb25faa2f7.png) | ![image](https://user-images.githubusercontent.com/89960/232421142-a47e75b4-5ff6-429d-9abd-a78dbc72466e.png) |
 | --- | --- |
