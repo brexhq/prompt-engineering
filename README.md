@@ -1197,7 +1197,7 @@ There are many downsides to fine-tuning. If it is at all possible, take advantag
 
 Some of the downsides include:
 
-- **Not possible**: [GPT-3.5/GPT-4 isn’t fine tunable](https://platform.openai.com/docs/guides/chat/is-fine-tuning-available-for-gpt-3-5-turbo), which is the primary model / API we’ll be using, so we simply can’t lean in fine-tuning.
+- **Not possible**: GPT-4 isn’t fine tunable, [though GPT-3.5 now is](https://platform.openai.com/docs/guides/fine-tuning/what-models-can-be-fine-tuned). As mentioned before, GPT-4 is the superior iteration of the models / APIs we’ll be using, so we simply can’t lean on fine-tuning.
 - **Overhead**: Fine-tuning requires manually creating tons of data.
 - **Velocity**: The iteration loop becomes much slower – every time you want to add a new capability, instead of adding a few lines to a prompt, you need to create a bunch of fake data and then run the finetune process and then use the newly fine-tuned model.
 - **Cost**: It is up to 60x more expensive to use a fine-tuned GPT-3 model vs the stock `gpt-3.5-turbo` model. And it is 2x more expensive to use a fine-tuned GPT-3 model vs the stock GPT-4 model.
